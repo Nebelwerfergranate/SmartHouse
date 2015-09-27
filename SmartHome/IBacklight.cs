@@ -5,15 +5,13 @@ using System.Text;
 
 namespace SmartHome
 {
-    public interface ISwitchable
+    public interface IBacklight
     {
-        bool IsOn
+        bool IsHighlighted
         {
             get;
         }
-    
-        void TurnOn();
 
-        void TurnOff();
+        double GetLampPower();
     }
 }

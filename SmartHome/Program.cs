@@ -20,42 +20,64 @@ namespace SmartHome
             clocks.Add(new Clock(18, 25));
             clocks.Add(new Clock(23, 59));
 
-            while (true)
+            while (false)
             {
                 foreach (Clock clock in clocks)
                 {
-                   // Console.WriteLine(clock.CurrentTime.Hours + ":" + clock.CurrentTime.Minutes + ":" + clock.CurrentTime.Seconds);
-                    Console.WriteLine(clock.CurrentTime.ToLongTimeString());
+                   Console.WriteLine(clock.CurrentTime.ToLongTimeString());
                 }
                 Console.WriteLine();
                 Thread.Sleep(1000);
             }
+
+
+            Fridge myFridge = Factory.Get2CamFridge(); 
+            //string state = Informer.StateToString(myFridge);
+            Console.WriteLine(Informer.StateToString(myFridge));
+
+            myFridge.TurnOn();
+            Console.WriteLine("myFridge.TurnOn()");
+            Console.WriteLine(Informer.StateToString(myFridge));
+
+            myFridge.Modules[0].Open();
+            Console.WriteLine("myFridge.Modules[0].Open()");
+            Console.WriteLine(Informer.StateToString(myFridge));
+           
+            
+            myFridge.TurnOff();
+            Console.WriteLine("myFridge.TurnOff()");
+            Console.WriteLine(Informer.StateToString(myFridge));
+
+            myFridge.TurnOn();
+            Console.WriteLine("myFridge.TurnOn()");
+            Console.WriteLine(Informer.StateToString(myFridge));
+
+            myFridge.Modules[0].Close();
+            Console.WriteLine("myFridge.Modules[0].Close()");
+            Console.WriteLine(Informer.StateToString(myFridge));
+
+            Microwave oven = Factory.GetMicrowaveOven();
+            oven.TimerSetMinutes(0);
+            oven.TimerSetSeconds(20);
+            oven.Start();
+
+            Microwave oven2 = Factory.GetMicrowaveOven();
+            oven2.TimerSetMinutes(1);
+            oven2.TimerSetSeconds(10);
+            oven2.Start();
+
+           
+            clocks[0].TurnOn();
+            clocks[0].SetHours(10);
+            clocks[0].SetMinutes(35);
+            Console.WriteLine(Informer.StateToString(clocks[0]));
+
+            oven.Open();
+            oven.TurnOn();
+            Console.WriteLine(Informer.StateToString(oven));
             
             
-            //Clock clock = new Clock();
-            //clock.SetHours(18);
-            //clock.SetMinutes(25);
-
-            //Clock c2 = new Clock();
-            //c2.SetHours(1);
-            //c2.SetMinutes(44);
-
-            //Clock c3 = new Clock();
-
-            //Clock c4 = new Clock();
-            //c4.SetHours(12);
-            //while (true)
-            //{
-            //    Console.WriteLine(clock.CurrentTime.Hours + " " + c);
-            //    Console.WriteLine(c2.CurrentTime);
-            //    Console.WriteLine(c3.CurrentTime);
-            //    Console.WriteLine(c4.CurrentTime);
-            //    Console.WriteLine();
-
-            //    Thread.Sleep(1000);
-            //}
             
-     
             Console.ReadKey();
         }
     }
