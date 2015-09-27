@@ -14,7 +14,6 @@ namespace SmartHome
         private System.Timers.Timer timer = new System.Timers.Timer();
         private TimerInfo timerInfo = new TimerInfo();
         private Lamp backlight;
-        private bool isHighlighted;
  
         public string OnReadyMessage { get; set; }
         public DateTime CurrentTime
@@ -34,18 +33,27 @@ namespace SmartHome
 
         public void TimerSetMinutes(byte minutes)
         {
-            timerInfo.Minutes = minutes;
+            if (this.IsOn)
+            {
+                timerInfo.Minutes = minutes;
+            }
         }
 
         public void TimerSetSeconds(byte seconds)
         {
-            timerInfo.Seconds = seconds;
+            if (this.IsOn)
+            {
+                timerInfo.Seconds = seconds;
+            }
         }
 
         public void Start()
         {
-            timer.Interval = timerInfo.GetMilliseconds();
-            timer.Start();
+            if (this.isOn)
+            {
+                timer.Interval = timerInfo.GetMilliseconds();
+                timer.Start();
+            }
         }
         public void Stop()
         {
@@ -54,7 +62,7 @@ namespace SmartHome
 
         private void OnTimedEvent(Object source, System.Timers.ElapsedEventArgs e)
         {
-            if (IsReady != null)
+            if (IsReady != null && this.IsOn)
             {
                 IsReady.Invoke(OnReadyMessage);
             }
@@ -121,10 +129,7 @@ namespace SmartHome
         public void Close()
         {
             isOpen = false;
-            if (backlight.IsOn)
-            {
-                backlight.TurnOff();
-            }
+            backlight.TurnOff();
         }
 
         public override void TurnOn()
@@ -132,19 +137,23 @@ namespace SmartHome
             base.TurnOn();
             if (this.isOpen)
             {
+                Console.WriteLine("lalla");
                 backlight.TurnOn();
             }
+            clock.TurnOn();
         }
 
         public override void TurnOff()
         {
             base.TurnOff();
+            this.Stop();
             backlight.TurnOff();
+            clock.TurnOff();
         }
 
         public bool IsHighlighted
         {
-            get { return isHighlighted; }
+            get { return backlight.IsOn; }
         }
 
         public double GetLampPower()

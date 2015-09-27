@@ -74,6 +74,7 @@ namespace SmartHome
 
             oven.Open();
             oven.TurnOn();
+            oven.SetHours(12);
             Console.WriteLine(Informer.StateToString(oven));
             
             
