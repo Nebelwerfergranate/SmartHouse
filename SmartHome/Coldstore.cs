@@ -1,54 +1,44 @@
 ﻿namespace SmartHome
 {
-    public class Coldstore : Device, IFridgeModule, IBacklight
+    public class Coldstore : FridgeModule, IBacklight
     {
-        private double temperature;
-        private bool isOpen;
+        // Поля
         private Lamp backlight;
-        public double Temperature
+
+
+        // Свойства
+        public override double Temperature
         {
             get { return temperature; }
             set
             {
-                if(value < 5 && value > -5)
+                if (value < 5 && value > -5)
                 {
                     temperature = value;
                 }
             }
         }
 
+        public double LampPower
+        {
+            get { return backlight.Power; }
+        }
         public bool IsHighlighted
         {
             get { return backlight.IsOn; }
         }
 
-        public double GetLampPower()
+
+        // Конструкторы
+        public Coldstore(Lamp lamp)
         {
-            return backlight.Power;
-        }
-        public bool IsOpen
-        {
-            get { return isOpen; }
+            backlight = lamp;
+            Temperature = 0;
+            Name = "Холодильная камера";
         }
 
-        public void Open()
-        {
-            isOpen = true;
-            if (this.IsOn)
-            {
-                backlight.TurnOn();
-            }
-        }
 
-        public void Close()
-        {
-            isOpen = false;
-            if (backlight.IsOn)
-            {
-                backlight.TurnOff();
-            }
-        }
-
+        // Методы
         public override void TurnOn()
         {
             base.TurnOn();
@@ -57,18 +47,26 @@
                 backlight.TurnOn();
             }
         }
-
         public override void TurnOff()
         {
             base.TurnOff();
             backlight.TurnOff();
         }
-
-        public Coldstore(Lamp lamp)
+        public override void Open()
         {
-            backlight = lamp;
-            Temperature = 0;
-            Name = "Холодильная камера";
+            isOpen = true;
+            if (this.IsOn)
+            {
+                backlight.TurnOn();
+            }
+        }
+        public override void Close()
+        {
+            isOpen = false;
+            if (backlight.IsOn)
+            {
+                backlight.TurnOff();
+            }
         }
     }
 }

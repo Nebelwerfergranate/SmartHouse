@@ -39,7 +39,7 @@ namespace SmartHome
             Console.WriteLine("myFridge.TurnOn()");
             Console.WriteLine(Informer.StateToString(myFridge));
 
-            myFridge.Modules[0].Open();
+            myFridge[0].Open();
             Console.WriteLine("myFridge.Modules[0].Open()");
             Console.WriteLine(Informer.StateToString(myFridge));
            
@@ -52,30 +52,42 @@ namespace SmartHome
             Console.WriteLine("myFridge.TurnOn()");
             Console.WriteLine(Informer.StateToString(myFridge));
 
-            myFridge.Modules[0].Close();
+            myFridge[0].Close();
             Console.WriteLine("myFridge.Modules[0].Close()");
             Console.WriteLine(Informer.StateToString(myFridge));
 
-            Microwave oven = Factory.GetMicrowaveOven();
-            oven.TimerSetMinutes(0);
-            oven.TimerSetSeconds(20);
-            oven.Start();
+            Microwave microwaveOven = Factory.GetMicrowaveOven();
+            microwaveOven.TurnOn();
+            microwaveOven.TimerSetMinutes(0);
+            microwaveOven.TimerSetSeconds(20);
+            microwaveOven.SetHours(12);
+            microwaveOven.Start();
+            Console.WriteLine(Informer.StateToString(microwaveOven));
 
-            Microwave oven2 = Factory.GetMicrowaveOven();
-            oven2.TimerSetMinutes(1);
-            oven2.TimerSetSeconds(10);
-            oven2.Start();
+            Microwave microwave = Factory.GetMicrowaveOven();
+            microwave.TurnOn();
+            microwave.TimerSetMinutes(1);
+            microwave.TimerSetSeconds(10);
+            microwave.Open();
+            microwave.Start();
+            Console.WriteLine(Informer.StateToString(microwave));
+
+            Oven myOven = Factory.GetOven();
+            myOven.TurnOn();
+            myOven.TimerSetSeconds(15);
+            myOven.Open();
+            myOven.Start();
+            Console.WriteLine(Informer.StateToString(myOven));
 
            
-            clocks[0].TurnOn();
-            clocks[0].SetHours(10);
-            clocks[0].SetMinutes(35);
-            Console.WriteLine(Informer.StateToString(clocks[0]));
+            //clocks[0].TurnOn();
+            //clocks[0].SetHours(10);
+            //clocks[0].SetMinutes(35);
+            //Console.WriteLine(Informer.StateToString(clocks[0]));
 
-            oven.Open();
-            oven.TurnOn();
-            oven.SetHours(12);
-            Console.WriteLine(Informer.StateToString(oven));
+            //oven.Open();
+            //oven.TurnOn();
+
             
             
             

@@ -1,42 +1,52 @@
-﻿namespace SmartHome
+﻿using System.Collections;
+using System.Collections.Generic;
+
+namespace SmartHome
 {
-    public class Fridge : Device
+    public class Fridge : Device, IEnumerable<FridgeModule>
     {
-        private IFridgeModule[] modules;
+        // Поля
+        private readonly List<FridgeModule> modules; 
 
-        public IFridgeModule[] Modules
-        {
-            get { return modules; }
-        }
 
-        public Fridge(IFridgeModule[] modules)
+        // Конструкторы
+        public Fridge(List<FridgeModule> modules)
         {
             this.modules = modules;
             Name = "Холодильник";
         }
 
+
+        // Методы
         public override void TurnOn()
         {
             base.TurnOn();
-            for (int i = 0; i < modules.Length; i++)
+            for (int i = 0; i < modules.Count; i++)
             {
-                if (modules[i] is Device)
-                {
-                    ((Device) modules[i]).TurnOn();
-                }
+                modules[i].TurnOn();
             }
         }
-
         public override void TurnOff()
         {
             base.TurnOff();
-            for (int i = 0; i < modules.Length; i++)
+            for (int i = 0; i < modules.Count; i++)
             {
-                if (modules[i] is Device)
-                {
-                    ((Device)modules[i]).TurnOff();
-                }
+                modules[i].TurnOff();
             }
+        }
+
+        public FridgeModule this[byte index]
+        {
+            get { return modules[index]; }
+        }
+
+        public IEnumerator<FridgeModule> GetEnumerator()
+        {
+            return modules.GetEnumerator();
+        }
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return modules.GetEnumerator();
         }
     }
 }

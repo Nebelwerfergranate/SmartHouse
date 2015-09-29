@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,37 +11,35 @@ namespace SmartHome
     {
         public static string StateToString(Device device)
         {
-            string info = GetBaseInfo(device);
-            info += GetBacklightInfo(device);
-            info += GetOpenableInfo(device);
-            info += GetTemperatureInfo(device);
-            info += ClockInfo(device);
+            string info = "";
+            info += GetAllInfo(device);
 
-            if (device is Fridge)
+            // Устройства, состоящие из произвольного количества модулей, должны поддерживать
+            // интерфейс IEnumerable<Device>, что бы корректно отображаться в меню.
+            if (device is IEnumerable<Device>)
             {
-                info += FridgeMolulesInfo((Fridge)device);
+                info += "***********\n";
+                info += "Модули:\n";
+                info += "\n";
+                foreach (Device module in (IEnumerable<Device>)device)
+                {
+                    info += GetAllInfo(module);
+                    info += "-----\n";
+                }
+                info += "***********\n";
+                return info;
             }
             return info;
         }
-
-        private static string FridgeMolulesInfo(Fridge fridge)
+        private static string GetAllInfo(Device device)
         {
             string info = "";
-            info += "***********\n";
-            info += "Модули:\n";
-            info += "\n";
-            foreach (IFridgeModule module in fridge.Modules)
-            {
-                if (module is Device)
-                {
-                    info += GetBaseInfo((Device)module);
-                    info += GetBacklightInfo((Device)module);
-                    info += GetOpenableInfo((Device)module);
-                    info += GetTemperatureInfo((Device) module);
-                }
-                info += "-----\n";
-            }
-            info += "***********\n";
+            info += GetBaseInfo(device);
+            info += GetOpenableInfo(device);
+            info += GetBacklightInfo(device);
+            info += GetTemperatureInfo(device);
+            info += GetClockInfo(device);
+            info += GetTimerInfo(device);
             return info;
         }
 
@@ -65,7 +64,7 @@ namespace SmartHome
             string info = "";
             if (device is IBacklight)
             {
-               
+
                 if (((IBacklight)device).IsHighlighted)
                 {
                     info += "Подсветка: включена\n";
@@ -74,7 +73,7 @@ namespace SmartHome
                 {
                     info += "Подсветка: выключена\n";
                 }
-                info += "Мощность лампочки: " + ((IBacklight)device).GetLampPower() + " Вт\n";
+                info += "Мощность лампочки: " + ((IBacklight)device).LampPower + " Вт\n";
             }
             return info;
         }
@@ -84,14 +83,14 @@ namespace SmartHome
             string info = "";
             if (device is IOpenable)
             {
-                 if (((IOpenable)device).IsOpen)
+                if (((IOpenable)device).IsOpen)
                 {
                     info += "Дверца: открыта\n";
                 }
                 else
                 {
                     info += "Дверца: закрыта\n";
-                }   
+                }
             }
             return info;
         }
@@ -101,17 +100,35 @@ namespace SmartHome
             string info = "";
             if (device is ITemperaturable)
             {
-                info += "Температура: " + ((ITemperaturable)device).Temperature + " градусов\n";
+                info += "Установка термостата: " + ((ITemperaturable)device).Temperature + " градусов\n";
             }
             return info;
         }
 
-        private static string ClockInfo(Device device)
+        private static string GetClockInfo(Device device)
         {
             string info = "";
             if (device is IClock)
             {
                 info += "Текущее время: " + ((IClock)device).CurrentTime.ToLongTimeString() + "\n";
+            }
+            return info;
+        }
+
+        private static string GetTimerInfo(Device device)
+        {
+            string info = "";
+            if (device is ITimer)
+            {
+                info += "Статус: ";
+                if (((ITimer) device).IsRunning)
+                {
+                    info += "Выполняет задачу\n";
+                }
+                else
+                {
+                    info += "Задач нет\n";
+                }
             }
             return info;
         }

@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace SmartHome
+﻿namespace SmartHome
 {
     public interface IBacklight
     {
@@ -12,6 +7,6 @@ namespace SmartHome
             get;
         }
 
-        double GetLampPower();
+        double LampPower { get; }
     }
 }

@@ -1,10 +1,9 @@
 ﻿namespace SmartHome
 {
-    public class Refrigeratory : Device, IFridgeModule
+    public class Refrigeratory : FridgeModule
     {
-        private double temperature;
-        private bool isOpen;
-        public double Temperature
+        // Свойства
+        public override double Temperature
         {
             get { return temperature; }
             set
@@ -16,21 +15,8 @@
             }
         }
 
-        public bool IsOpen
-        {
-            get { return isOpen; }
-        }
 
-        public void Open()
-        {
-            isOpen = true;
-        }
-
-        public void Close()
-        {
-            isOpen = false;
-        }
-
+        // Конструкторы
         public Refrigeratory()
         {
             Name = "Морозильная камера";
