@@ -31,7 +31,7 @@ namespace SmartHome
             }
 
 
-            Fridge myFridge = Factory.GetSamsungFridge();
+            Fridge myFridge = DeviceFactory.GetSamsungFridge();
             //string state = Informer.StateToString(myFridge);
             Console.WriteLine(Informer.StateToString(myFridge));
 
@@ -56,14 +56,14 @@ namespace SmartHome
             Console.WriteLine("myFridge.Modules[0].Close()");
             Console.WriteLine(Informer.StateToString(myFridge));
 
-            Microwave microwaveOven = Factory.GetMicrowaveOven();
+            Microwave microwaveOven = DeviceFactory.GetWhirpoolMicrowave();
             microwaveOven.TurnOn();
             microwaveOven.CurrentTime = new DateTime(1,1,1,13,34,0);
             microwaveOven.SetTimer(new TimeSpan(0,0,20));
             microwaveOven.Start();
             Console.WriteLine(Informer.StateToString(microwaveOven));
 
-            Microwave microwave = Factory.GetMicrowaveOven();
+            Microwave microwave = DeviceFactory.GetWhirpoolMicrowave();
             microwave.TurnOn();
             microwave.SetTimer(new TimeSpan(0,1,10));
             microwave.Open();
@@ -71,7 +71,7 @@ namespace SmartHome
             microwave.Start();
             Console.WriteLine(Informer.StateToString(microwave));
 
-            Oven myOven = Factory.GetOven();
+            Oven myOven = DeviceFactory.GetSiemenseOven();
             myOven.TurnOn();
             myOven.SetTimer(new TimeSpan(0, 0, 15));
             myOven.Open();

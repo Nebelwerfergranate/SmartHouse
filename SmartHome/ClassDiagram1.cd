@@ -12,7 +12,7 @@
     </InheritanceLine>
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgEAAAAA=</HashCode>
-      <FileName>Clock.cs</FileName>
+      <FileName>Devices\Clock.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.472" />
   </Class>
@@ -20,7 +20,7 @@
     <Position X="3.75" Y="3.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>ABAAAAAAAAAAAAAAAAABAAQAAQAAAAAAQAAAAAAAAAA=</HashCode>
-      <FileName>Device.cs</FileName>
+      <FileName>Devices\Device.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="SmartHome.Fridge">
@@ -35,14 +35,14 @@
     </InheritanceLine>
     <TypeIdentifier>
       <HashCode>EBAACAAAAAAAAAEAIAAAgJAAAABAgIAAQASAAAAgAAA=</HashCode>
-      <FileName>Fridge.cs</FileName>
+      <FileName>Devices\Fridge.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="SmartHome.Refrigeratory">
     <Position X="1" Y="14" Width="1.5" />
     <InheritanceLine Type="SmartHome.FridgeModule" ManuallyRouted="true">
       <Path>
-        <Point X="4.5" Y="11.29" />
+        <Point X="4.5" Y="11.79" />
         <Point X="4.5" Y="13.247" />
         <Point X="1.75" Y="13.247" />
         <Point X="1.75" Y="14" />
@@ -50,14 +50,14 @@
     </InheritanceLine>
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAA=</HashCode>
-      <FileName>Refrigeratory.cs</FileName>
+      <FileName>Devices\Refrigeratory.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="SmartHome.Coldstore">
     <Position X="3.75" Y="14" Width="1.5" />
     <InheritanceLine Type="SmartHome.FridgeModule" ManuallyRouted="true">
       <Path>
-        <Point X="4.5" Y="11.29" />
+        <Point X="4.5" Y="11.79" />
         <Point X="4.5" Y="12.124" />
         <Point X="4.5" Y="12.124" />
         <Point X="4.5" Y="14" />
@@ -65,7 +65,7 @@
     </InheritanceLine>
     <TypeIdentifier>
       <HashCode>CBAAAAAAAAAAIAAAAAAAgAAAIAAAAAAAQAAAAACEAAA=</HashCode>
-      <FileName>Coldstore.cs</FileName>
+      <FileName>Devices\Coldstore.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
@@ -81,97 +81,111 @@
     </InheritanceLine>
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAEAAAABAAAAAAAAAAA=</HashCode>
-      <FileName>Lamp.cs</FileName>
+      <FileName>Devices\Lamp.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="SmartHome.Factory">
+  <Class Name="SmartHome.DeviceFactory">
     <Position X="6" Y="3.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>IAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAA=</HashCode>
-      <FileName>Factory.cs</FileName>
+      <HashCode>AAAAAAACAAAAACAAAAAAAAAAAAAAgAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Program\DeviceFactory.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="SmartHome.Microwave">
-    <Position X="9" Y="8" Width="1.5" />
+    <Position X="9" Y="8.75" Width="1.5" />
     <InheritanceLine Type="SmartHome.Device" ManuallyRouted="true">
       <Path>
         <Point X="4.5" Y="6.141" />
         <Point X="4.5" Y="7.047" />
         <Point X="9.75" Y="7.047" />
-        <Point X="9.75" Y="8" />
+        <Point X="9.75" Y="8.75" />
       </Path>
     </InheritanceLine>
     <TypeIdentifier>
-      <HashCode>KBQAAAAAACAAIBBAAAAAwAAAIAAAAAAAYAACgCCABAA=</HashCode>
-      <FileName>Microwave.cs</FileName>
+      <HashCode>KBQAAAAAACAAIBBAAAAAwAAAIAAAAAAAYAICgCCCBAA=</HashCode>
+      <FileName>Devices\Microwave.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="SmartHome.FridgeModule">
-    <Position X="3.75" Y="8" Width="1.5" />
+    <Position X="3.75" Y="8.5" Width="1.5" />
     <InheritanceLine Type="SmartHome.Device" ManuallyRouted="true">
       <Path>
         <Point X="4.5" Y="6.141" />
         <Point X="4.5" Y="7.723" />
         <Point X="4.5" Y="7.723" />
-        <Point X="4.5" Y="8" />
+        <Point X="4.5" Y="8.5" />
       </Path>
     </InheritanceLine>
     <TypeIdentifier>
       <HashCode>IAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAYAACCGAAA=</HashCode>
-      <FileName>FridgeModule.cs</FileName>
+      <FileName>Devices\FridgeModule.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="SmartHome.Oven">
-    <Position X="14" Y="8" Width="1.5" />
+    <Position X="14" Y="8.75" Width="1.5" />
     <InheritanceLine Type="SmartHome.Device" ManuallyRouted="true">
       <Path>
         <Point X="4.5" Y="6.141" />
         <Point X="4.5" Y="7.031" />
         <Point X="14.75" Y="7.031" />
-        <Point X="14.75" Y="8" />
+        <Point X="14.75" Y="8.75" />
       </Path>
     </InheritanceLine>
     <TypeIdentifier>
-      <HashCode>KBQAAAAAACAAIBBAAAAAwAAAIAAAAAAAYAQAACCEBAA=</HashCode>
-      <FileName>Oven.cs</FileName>
+      <HashCode>KBQAAAAAACAAIBBAAAAAwAAAIAAAAAAAYAYAACCGBAA=</HashCode>
+      <FileName>Devices\Oven.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="SmartHome.Informer">
+    <Position X="8" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAABAAAAAAAAAACAAAAIAAAAAAAAACAAACEBAAEA=</HashCode>
+      <FileName>Program\Informer.cs</FileName>
+    </TypeIdentifier>
   </Class>
   <Interface Name="SmartHome.IClock">
     <Position X="6.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAA=</HashCode>
-      <FileName>IClock.cs</FileName>
+      <FileName>Interfaces\IClock.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="SmartHome.IOpenable">
     <Position X="0.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>IAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAACAAAA=</HashCode>
-      <FileName>IOpenable.cs</FileName>
+      <FileName>Interfaces\IOpenable.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="SmartHome.IBacklight">
     <Position X="2.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>CAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>IBacklight.cs</FileName>
+      <FileName>Interfaces\IBacklight.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="SmartHome.ITemperaturable">
     <Position X="4.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAA=</HashCode>
-      <FileName>ITemperaturable.cs</FileName>
+      <FileName>Interfaces\ITemperaturable.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="SmartHome.ITimer">
     <Position X="8.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAACAAABAAAAAAQAAAAAAAAAAAIAAAAAAABAA=</HashCode>
-      <FileName>ITimer.cs</FileName>
+      <FileName>Interfaces\ITimer.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="SmartHome.IVolume">
+    <Position X="10.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAA=</HashCode>
+      <FileName>Interfaces\IVolume.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Font Name="Segoe UI" Size="9" />

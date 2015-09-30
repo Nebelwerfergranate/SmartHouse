@@ -2,7 +2,16 @@
 {
     public class Refrigeratory : FridgeModule
     {
-        // Свойства
+        // Constructors
+        public Refrigeratory(uint volume)
+            : base(volume)
+        {
+            Name = "Морозильная камера";
+            Temperature = -10;
+        }
+
+
+        // Properties
         public override double Temperature
         {
             get { return temperature; }
@@ -13,14 +22,6 @@
                     temperature = value;
                 }
             }
-        }
-
-
-        // Конструкторы
-        public Refrigeratory(uint volume) : base(volume)
-        {
-            Name = "Морозильная камера";
-            Temperature = -10;
         }
     }
 }

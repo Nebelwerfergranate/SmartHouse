@@ -18,23 +18,8 @@ namespace SmartHome
             info += GetTemperatureInfo(device);
             info += GetClockInfo(device);
             info += GetTimerInfo(device);
+            info += GetIvolumeInfo(device);
             info += GetFridgeInfo(device);
-
-            // Устройства, состоящие из произвольного количества модулей, должны поддерживать
-            // интерфейс IEnumerable<Device>, что бы корректно отображаться в меню.
-            //if (device is IEnumerable<Device>)
-            //{
-            //    info += "***********\n";
-            //    info += "Модули:\n";
-            //    info += "\n";
-            //    foreach (Device module in (IEnumerable<Device>)device)
-            //    {
-            //        info += GetAllInfo(module);
-            //        info += "-----\n";
-            //    }
-            //    info += "***********\n";
-            //    return info;
-            //}
             return info;
         }
 
@@ -124,6 +109,16 @@ namespace SmartHome
                 {
                     info += "Задач нет\n";
                 }
+            }
+            return info;
+        }
+
+        private static string GetIvolumeInfo(Device device)
+        {
+            string info = "";
+            if (device is IVolume)
+            {
+                info += "Внутренний объем: " + ((IVolume) device).Volume + " литров\n";
             }
             return info;
         }

@@ -1,19 +1,25 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-
-namespace SmartHome
+﻿namespace SmartHome
 {
     public class Fridge : Device
     {
-        // Поля
+        // Fields
         private readonly Coldstore coldstore;
-        private readonly Refrigeratory refrigeratory; 
+        private readonly Refrigeratory refrigeratory;
 
 
-        // Свойства
+        // Constructors
+        public Fridge(Coldstore coldstore, Refrigeratory refrigeratory)
+        {
+            this.coldstore = coldstore;
+            this.refrigeratory = refrigeratory;
+            Name = "Холодильник";
+        }
+
+
+        // Properties
         public bool ColdstoreIsOpen
         {
-            get { return coldstore.IsOpen;}
+            get { return coldstore.IsOpen; }
         }
         public double ColdstoreTemperature
         {
@@ -48,16 +54,7 @@ namespace SmartHome
         }
 
 
-        // Конструкторы
-        public Fridge(Coldstore coldstore, Refrigeratory refrigeratory)
-        {
-            this.coldstore = coldstore;
-            this.refrigeratory = refrigeratory;
-            Name = "Холодильник";
-        }
-
-
-        // Методы
+        // Methods
         public override void TurnOn()
         {
             base.TurnOn();

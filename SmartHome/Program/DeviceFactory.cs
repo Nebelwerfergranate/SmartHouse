@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace SmartHome
 {
-    public static class Factory
+    public static class DeviceFactory
     {
         public static Fridge GetSamsungFridge()
         {
@@ -11,9 +11,9 @@ namespace SmartHome
             return fridge;
         }
 
-        public static Microwave GetMicrowaveOven()
+        public static Microwave GetWhirpoolMicrowave()
         {
-            Microwave oven = new Microwave(new Lamp(10));
+            Microwave oven = new Microwave(20, new Lamp(10));
             oven.OperationDone += source =>
             {
                 Console.Beep(3000, 500);
@@ -22,9 +22,9 @@ namespace SmartHome
             return oven;
         }
 
-        public static Oven GetOven()
+        public static Oven GetSiemenseOven()
         {
-            Oven oven = new Oven(new Lamp(25));
+            Oven oven = new Oven(67, new Lamp(25));
             oven.OperationDone += source =>
             {
                 Console.Beep(2000, 1000);
