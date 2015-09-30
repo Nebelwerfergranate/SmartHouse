@@ -1,4 +1,6 @@
-﻿namespace SmartHome
+﻿using System;
+
+namespace SmartHome
 {
     public interface ITimer
     {
@@ -8,10 +10,8 @@
         {
             get;
         }
-    
-        void TimerSetMinutes(byte minutes);
 
-        void TimerSetSeconds(byte seconds);
+        void SetTimer(TimeSpan time);
 
         void Start();
 

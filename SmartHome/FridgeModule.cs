@@ -7,6 +7,8 @@
 
         protected double temperature;
 
+        protected uint volume;
+
 
         //Свойства
         public bool IsOpen
@@ -16,6 +18,19 @@
 
         public abstract double Temperature
         { get; set; }
+
+        public uint Volume
+        {
+            get { return volume; }
+        }
+
+
+
+        // Конструкторы
+        protected FridgeModule(uint volume)
+        {
+            this.volume = volume;
+        }
 
 
         // Методы

@@ -6,11 +6,10 @@ namespace SmartHome
     {
         DateTime CurrentTime
         {
+            set;
             get;
         }
 
-        void SetHours(byte hours);
 
-        void SetMinutes(byte minutes);
     }
 }

@@ -1,4 +1,6 @@
-﻿namespace SmartHome
+﻿using System;
+
+namespace SmartHome
 {
     public class Oven : Device, ITemperaturable, IOpenable, IBacklight, ITimer
     {
@@ -14,7 +16,6 @@
         private Lamp backlight;
 
         private System.Timers.Timer timer = new System.Timers.Timer();
-        private TimerInfo timerInfo = new TimerInfo();
         private bool isRunning;
 
 
@@ -98,27 +99,18 @@
         }
 
 
-        public void TimerSetMinutes(byte minutes)
+        public void SetTimer(TimeSpan time)
         {
-            if (this.IsOn)
+            if (this.isOn)
             {
-                timerInfo.Minutes = minutes;
+                timer.Interval = time.Seconds * 1000 + time.Minutes * 60 * 1000;
             }
         }
-        public void TimerSetSeconds(byte seconds)
-        {
-            if (this.IsOn)
-            {
-                timerInfo.Seconds = seconds;
-            }
-        }
-
         public void Start()
         {
             // В отличие от микроволновки духовку можно открывать.
-            if (this.isOn && timerInfo.GetMilliseconds() > 0)
+            if (this.isOn && timer.Interval> 0)
             {
-                timer.Interval = timerInfo.GetMilliseconds();
                 timer.Start();
                 isRunning = true;
                 backlight.TurnOn();

@@ -17,7 +17,7 @@
 
 
         // Конструкторы
-        public Refrigeratory()
+        public Refrigeratory(uint volume) : base(volume)
         {
             Name = "Морозильная камера";
             Temperature = -10;

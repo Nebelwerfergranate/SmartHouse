@@ -30,7 +30,7 @@
 
 
         // Конструкторы
-        public Coldstore(Lamp lamp)
+        public Coldstore(uint volume, Lamp lamp) : base(volume)
         {
             backlight = lamp;
             Temperature = 0;

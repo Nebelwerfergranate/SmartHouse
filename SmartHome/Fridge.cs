@@ -3,16 +3,56 @@ using System.Collections.Generic;
 
 namespace SmartHome
 {
-    public class Fridge : Device, IEnumerable<FridgeModule>
+    public class Fridge : Device
     {
         // Поля
-        private readonly List<FridgeModule> modules; 
+        private readonly Coldstore coldstore;
+        private readonly Refrigeratory refrigeratory; 
+
+
+        // Свойства
+        public bool ColdstoreIsOpen
+        {
+            get { return coldstore.IsOpen;}
+        }
+        public double ColdstoreTemperature
+        {
+            get { return coldstore.Temperature; }
+            set { coldstore.Temperature = value; }
+        }
+        public bool ColdstoreIsHighlighted
+        {
+            get { return coldstore.IsHighlighted; }
+        }
+        public double ColdstoreLampPower
+        {
+            get { return coldstore.LampPower; }
+        }
+        public double ColdstoreVolume
+        {
+            get { return coldstore.Volume; }
+        }
+
+        public bool RefrigeratoryIsOpen
+        {
+            get { return refrigeratory.IsOpen; }
+        }
+        public double RefrigeratoryTemperature
+        {
+            get { return refrigeratory.Temperature; }
+            set { refrigeratory.Temperature = value; }
+        }
+        public double RefrigeratoryVolume
+        {
+            get { return refrigeratory.Volume; }
+        }
 
 
         // Конструкторы
-        public Fridge(List<FridgeModule> modules)
+        public Fridge(Coldstore coldstore, Refrigeratory refrigeratory)
         {
-            this.modules = modules;
+            this.coldstore = coldstore;
+            this.refrigeratory = refrigeratory;
             Name = "Холодильник";
         }
 
@@ -21,32 +61,31 @@ namespace SmartHome
         public override void TurnOn()
         {
             base.TurnOn();
-            for (int i = 0; i < modules.Count; i++)
-            {
-                modules[i].TurnOn();
-            }
+            coldstore.TurnOn();
+            refrigeratory.TurnOn();
         }
         public override void TurnOff()
         {
             base.TurnOff();
-            for (int i = 0; i < modules.Count; i++)
-            {
-                modules[i].TurnOff();
-            }
+            coldstore.TurnOff();
+            refrigeratory.TurnOff();
         }
 
-        public FridgeModule this[byte index]
+        public void OpenColdstore()
         {
-            get { return modules[index]; }
+            coldstore.Open();
         }
-
-        public IEnumerator<FridgeModule> GetEnumerator()
+        public void CloseColdstore()
         {
-            return modules.GetEnumerator();
+            coldstore.Close();
         }
-        IEnumerator IEnumerable.GetEnumerator()
+        public void OpenRefrigeratory()
         {
-            return modules.GetEnumerator();
+            refrigeratory.Open();
+        }
+        public void CloseRefrigeratory()
+        {
+            refrigeratory.Close();
         }
     }
 }

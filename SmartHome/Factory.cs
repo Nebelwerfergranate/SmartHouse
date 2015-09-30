@@ -5,13 +5,9 @@ namespace SmartHome
 {
     public static class Factory
     {
-        public static Fridge Get2CamFridge()
+        public static Fridge GetSamsungFridge()
         {
-            List<FridgeModule> modules = new List<FridgeModule>();
-            modules.Add(new Coldstore(new Lamp(25)));
-            modules.Add(new Refrigeratory());
-
-            Fridge fridge = new Fridge(modules);
+            Fridge fridge = new Fridge(new Coldstore( 254, new Lamp(25)), new Refrigeratory(92));
             return fridge;
         }
 

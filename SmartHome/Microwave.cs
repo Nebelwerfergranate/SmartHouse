@@ -13,13 +13,12 @@ namespace SmartHome
         private Clock clock = new Clock();
 
         private System.Timers.Timer timer = new System.Timers.Timer();
-        private TimerInfo timerInfo = new TimerInfo();
         private bool isRunning;
 
         private bool isOpen;
- 
+
         private Lamp backlight;
-        
+
 
         // Конструкторы
         public Microwave(Lamp lamp)
@@ -41,6 +40,7 @@ namespace SmartHome
         public DateTime CurrentTime
         {
             get { return clock.CurrentTime; }
+            set { clock.CurrentTime = value; }
         }
 
         public bool IsRunning
@@ -81,34 +81,17 @@ namespace SmartHome
             clock.TurnOff();
         }
 
-        public void SetHours(byte hours)
+        public void SetTimer(TimeSpan time)
         {
-            clock.SetHours(hours);
-        }
-        public void SetMinutes(byte minutes)
-        {
-            clock.SetMinutes(minutes);
-        }
-
-        public void TimerSetMinutes(byte minutes)
-        {
-            if (this.IsOn)
+            if (this.isOn)
             {
-                timerInfo.Minutes = minutes;
-            }
-        }
-        public void TimerSetSeconds(byte seconds)
-        {
-            if (this.IsOn)
-            {
-                timerInfo.Seconds = seconds;
+                timer.Interval = time.Seconds * 1000 + time.Minutes * 60 * 1000;
             }
         }
         public void Start()
         {
-            if (this.isOn && !IsOpen && timerInfo.GetMilliseconds() > 0)
+            if (this.isOn && !IsOpen && timer.Interval > 0)
             {
-                timer.Interval = timerInfo.GetMilliseconds();
                 timer.Start();
                 isRunning = true;
                 backlight.TurnOn();

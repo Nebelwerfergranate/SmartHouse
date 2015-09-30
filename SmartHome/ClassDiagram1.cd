@@ -11,7 +11,7 @@
       </Path>
     </InheritanceLine>
     <TypeIdentifier>
-      <HashCode>AAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAEAgEAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgEAAAAA=</HashCode>
       <FileName>Clock.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.472" />
@@ -34,19 +34,18 @@
       </Path>
     </InheritanceLine>
     <TypeIdentifier>
-      <HashCode>ABAAAAAAAAAAABAACBAAAAAAAAAAAAAEQAAAAAAAAAA=</HashCode>
+      <HashCode>EBAACAAAAAAAAAEAIAAAgJAAAABAgIAAQASAAAAgAAA=</HashCode>
       <FileName>Fridge.cs</FileName>
     </TypeIdentifier>
-    <Lollipop Position="0.2" />
   </Class>
   <Class Name="SmartHome.Refrigeratory">
-    <Position X="1" Y="13" Width="1.5" />
+    <Position X="1" Y="14" Width="1.5" />
     <InheritanceLine Type="SmartHome.FridgeModule" ManuallyRouted="true">
       <Path>
-        <Point X="4.5" Y="10.713" />
-        <Point X="4.5" Y="12.187" />
-        <Point X="1.75" Y="12.187" />
-        <Point X="1.75" Y="13" />
+        <Point X="4.5" Y="11.29" />
+        <Point X="4.5" Y="13.247" />
+        <Point X="1.75" Y="13.247" />
+        <Point X="1.75" Y="14" />
       </Path>
     </InheritanceLine>
     <TypeIdentifier>
@@ -55,13 +54,13 @@
     </TypeIdentifier>
   </Class>
   <Class Name="SmartHome.Coldstore">
-    <Position X="3.75" Y="13" Width="1.5" />
+    <Position X="3.75" Y="14" Width="1.5" />
     <InheritanceLine Type="SmartHome.FridgeModule" ManuallyRouted="true">
       <Path>
-        <Point X="4.5" Y="10.713" />
+        <Point X="4.5" Y="11.29" />
         <Point X="4.5" Y="12.124" />
         <Point X="4.5" Y="12.124" />
-        <Point X="4.5" Y="13" />
+        <Point X="4.5" Y="14" />
       </Path>
     </InheritanceLine>
     <TypeIdentifier>
@@ -88,7 +87,7 @@
   <Class Name="SmartHome.Factory">
     <Position X="6" Y="3.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>IAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>IAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAA=</HashCode>
       <FileName>Factory.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -103,7 +102,7 @@
       </Path>
     </InheritanceLine>
     <TypeIdentifier>
-      <HashCode>KBQAAABAACAAIBJAAAAEyAAAIAAAAAAAYAECgCCAAAA=</HashCode>
+      <HashCode>KBQAAAAAACAAIBBAAAAAwAAAIAAAAAAAYAACgCCABAA=</HashCode>
       <FileName>Microwave.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -119,7 +118,7 @@
       </Path>
     </InheritanceLine>
     <TypeIdentifier>
-      <HashCode>IAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAQAACCEAAA=</HashCode>
+      <HashCode>IAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAYAACCGAAA=</HashCode>
       <FileName>FridgeModule.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -135,7 +134,7 @@
       </Path>
     </InheritanceLine>
     <TypeIdentifier>
-      <HashCode>KBQAAAAAACAAIBJAAAAEyAAAIAAAAAAAYAQAACCEAAA=</HashCode>
+      <HashCode>KBQAAAAAACAAIBBAAAAAwAAAIAAAAAAAYAQAACCEBAA=</HashCode>
       <FileName>Oven.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -143,7 +142,7 @@
   <Interface Name="SmartHome.IClock">
     <Position X="6.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAEAgAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAA=</HashCode>
       <FileName>IClock.cs</FileName>
     </TypeIdentifier>
   </Interface>
@@ -171,7 +170,7 @@
   <Interface Name="SmartHome.ITimer">
     <Position X="8.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAACAAABIAAAAASAAAAAAAAAAAIAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAACAAABAAAAAAQAAAAAAAAAAAIAAAAAAABAA=</HashCode>
       <FileName>ITimer.cs</FileName>
     </TypeIdentifier>
   </Interface>

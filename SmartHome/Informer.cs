@@ -12,34 +12,29 @@ namespace SmartHome
         public static string StateToString(Device device)
         {
             string info = "";
-            info += GetAllInfo(device);
-
-            // Устройства, состоящие из произвольного количества модулей, должны поддерживать
-            // интерфейс IEnumerable<Device>, что бы корректно отображаться в меню.
-            if (device is IEnumerable<Device>)
-            {
-                info += "***********\n";
-                info += "Модули:\n";
-                info += "\n";
-                foreach (Device module in (IEnumerable<Device>)device)
-                {
-                    info += GetAllInfo(module);
-                    info += "-----\n";
-                }
-                info += "***********\n";
-                return info;
-            }
-            return info;
-        }
-        private static string GetAllInfo(Device device)
-        {
-            string info = "";
             info += GetBaseInfo(device);
             info += GetOpenableInfo(device);
             info += GetBacklightInfo(device);
             info += GetTemperatureInfo(device);
             info += GetClockInfo(device);
             info += GetTimerInfo(device);
+            info += GetFridgeInfo(device);
+
+            // Устройства, состоящие из произвольного количества модулей, должны поддерживать
+            // интерфейс IEnumerable<Device>, что бы корректно отображаться в меню.
+            //if (device is IEnumerable<Device>)
+            //{
+            //    info += "***********\n";
+            //    info += "Модули:\n";
+            //    info += "\n";
+            //    foreach (Device module in (IEnumerable<Device>)device)
+            //    {
+            //        info += GetAllInfo(module);
+            //        info += "-----\n";
+            //    }
+            //    info += "***********\n";
+            //    return info;
+            //}
             return info;
         }
 
@@ -129,6 +124,50 @@ namespace SmartHome
                 {
                     info += "Задач нет\n";
                 }
+            }
+            return info;
+        }
+
+        private static string GetFridgeInfo(Device device)
+        {
+            string info = "";
+            Fridge fridge = device as Fridge;
+            if (fridge != null)
+            {
+                info += "Объём морозильной камеры: " + fridge.RefrigeratoryVolume + " л\n"; 
+                info += "Дверца морозильной камеры: ";
+                if (fridge.RefrigeratoryIsOpen)
+                {
+                    info += "Открыта\n";
+                }
+                else
+                {
+                    info += "Закрыта\n";
+                }
+                info += "Температура в морозильной камере: " + fridge.RefrigeratoryTemperature + " градусов\n";
+
+                info += "Дверца холодильника: ";
+                if (fridge.ColdstoreIsOpen)
+                {
+                    info += "Открыта\n";
+                }
+                else
+                {
+                    info += "Закрыта\n";
+                }
+                info += "Температура в холодильнике: " + fridge.ColdstoreTemperature + " градусов\n";
+
+                info += "Объём холодильника (без морозильной камеры): " + fridge.ColdstoreVolume + " л\n"; 
+                info += "Подсветка холодильника: ";
+                if (fridge.ColdstoreIsHighlighted)
+                {
+                    info += "Включена\n";
+                }
+                else
+                {
+                    info += "Выключена\n";
+                }
+                info += "Мощность ламочки холодильника: " + fridge.ColdstoreLampPower + " Вт\n";
             }
             return info;
         }
