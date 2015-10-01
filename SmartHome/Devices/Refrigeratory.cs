@@ -4,9 +4,8 @@
     {
         // Constructors
         public Refrigeratory(uint volume)
-            : base(volume)
+            : base("Морозильная камера", volume)
         {
-            Name = "Морозильная камера";
             Temperature = -10;
         }
 

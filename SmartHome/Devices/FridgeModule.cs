@@ -11,7 +11,7 @@
 
 
         // Constructors
-        protected FridgeModule(uint volume)
+        protected FridgeModule(string name, uint volume) : base(name)
         {
             if (volume < 10)
             {

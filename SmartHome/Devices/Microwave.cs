@@ -5,7 +5,7 @@ namespace SmartHome
     public class Microwave : Device, IClock, ITimer, IOpenable, IBacklight, IVolume
     {
         // Fields
-        private readonly Clock clock = new Clock();
+        private readonly Clock clock = new Clock("Встроенные часы");
 
         private readonly Lamp backlight;
 
@@ -18,9 +18,8 @@ namespace SmartHome
 
 
         // Constructors
-        public Microwave( double volume, Lamp lamp)
+        public Microwave(string name, double volume, Lamp lamp) : base(name)
         {
-            Name = "Микроволновая печь";
             this.backlight = lamp;
             if (volume < 10)
             {

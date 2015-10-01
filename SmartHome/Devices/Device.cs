@@ -6,6 +6,13 @@
         protected bool isOn;
 
 
+        // Constructors
+        protected Device(string name)
+        {
+            Name = name;
+        }
+
+
         // Properties
         public virtual string Name
         {get; set; }

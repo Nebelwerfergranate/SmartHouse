@@ -118,7 +118,7 @@ namespace SmartHome
             string info = "";
             if (device is IVolume)
             {
-                info += "Внутренний объем: " + ((IVolume) device).Volume + " литров\n";
+                info += "Внутренний объем: " + ((IVolume) device).Volume + " л\n";
             }
             return info;
         }

@@ -19,7 +19,7 @@ namespace SmartHome
         
 
         // Constructors
-        public Oven(double volume, Lamp lamp)
+        public Oven(string name, double volume, Lamp lamp) : base(name)
         {
             Name = "Духовка";
             this.backlight = lamp;

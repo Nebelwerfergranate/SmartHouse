@@ -9,13 +9,12 @@ namespace SmartHome
 
 
         // Constructors
-        public Clock()
+        public Clock(string name) : base(name)
         {
             delta = -DateTime.Now.TimeOfDay;
-            Name = "Часы";
         }
-        public Clock(DateTime time)
-            : this()
+        public Clock(string name, DateTime time)
+            : this(name)
         {
             CurrentTime = time;
         }

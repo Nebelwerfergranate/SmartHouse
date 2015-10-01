@@ -84,13 +84,6 @@
       <FileName>Devices\Lamp.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="SmartHome.DeviceFactory">
-    <Position X="6" Y="3.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAACAAAAACAAAAAAAAAAAAAAgAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Program\DeviceFactory.cs</FileName>
-    </TypeIdentifier>
-  </Class>
   <Class Name="SmartHome.Microwave">
     <Position X="9" Y="8.75" Width="1.5" />
     <InheritanceLine Type="SmartHome.Device" ManuallyRouted="true">
@@ -144,6 +137,27 @@
     <TypeIdentifier>
       <HashCode>AIAAAABAAAAAAAAAACAAAAIAAAAAAAAACAAACEBAAEA=</HashCode>
       <FileName>Program\Informer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SmartHome.FridgeFactory">
+    <Position X="10" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAAAAAgAAAAAAAAAIAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Program\FridgeFactory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SmartHome.MicrowaveFactory">
+    <Position X="11.75" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAQAAAAAAA=</HashCode>
+      <FileName>Program\MicrowaveFactory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SmartHome.OvenFactory">
+    <Position X="13.5" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Program\OvenFactory.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Interface Name="SmartHome.IClock">

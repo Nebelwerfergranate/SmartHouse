@@ -8,11 +8,10 @@
 
 
         // Constructors
-        public Fridge(Coldstore coldstore, Refrigeratory refrigeratory)
+        public Fridge(string name, Coldstore coldstore, Refrigeratory refrigeratory) : base(name)
         {
             this.coldstore = coldstore;
             this.refrigeratory = refrigeratory;
-            Name = "Холодильник";
         }
 
 
