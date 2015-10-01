@@ -10,7 +10,7 @@ namespace SmartHome
             //Test.ClockTest(devices);
             //Test.FridgeTest(devices);
             //Test.TimerTest(devices);
-            ConsoleMenu.AddDevices(devices);
+            ConsoleMenu.GetDefaultDevices(devices);
             ConsoleMenu.Start(devices);
         }
     }

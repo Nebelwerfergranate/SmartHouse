@@ -35,6 +35,8 @@ namespace SmartHome
                 if (OperationDone != null && this.IsOn)
                 {
                     OperationDone.Invoke(this);
+                    isRunning = false;
+                    lamp.TurnOff();
                 }
             };
         }

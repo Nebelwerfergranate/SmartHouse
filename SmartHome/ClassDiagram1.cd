@@ -2,14 +2,6 @@
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="SmartHome.Clock">
     <Position X="11.25" Y="8" Width="1.5" />
-    <InheritanceLine Type="SmartHome.Device" ManuallyRouted="true">
-      <Path>
-        <Point X="4.5" Y="6.141" />
-        <Point X="4.5" Y="7.041" />
-        <Point X="12" Y="7.041" />
-        <Point X="12" Y="8" />
-      </Path>
-    </InheritanceLine>
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgEAAAAA=</HashCode>
       <FileName>Devices\Clock.cs</FileName>
@@ -25,14 +17,6 @@
   </Class>
   <Class Name="SmartHome.Fridge">
     <Position X="1" Y="8" Width="1.5" />
-    <InheritanceLine Type="SmartHome.Device" ManuallyRouted="true">
-      <Path>
-        <Point X="4.5" Y="6.141" />
-        <Point X="4.5" Y="7.076" />
-        <Point X="1.75" Y="7.076" />
-        <Point X="1.75" Y="8" />
-      </Path>
-    </InheritanceLine>
     <TypeIdentifier>
       <HashCode>EBAACAAAAAAAAAEAIAAAgJAAAABAgIAAQASAAAAgAAA=</HashCode>
       <FileName>Devices\Fridge.cs</FileName>
@@ -71,14 +55,6 @@
   </Class>
   <Class Name="SmartHome.Lamp">
     <Position X="6" Y="8" Width="1.5" />
-    <InheritanceLine Type="SmartHome.Device" ManuallyRouted="true">
-      <Path>
-        <Point X="4.5" Y="6.141" />
-        <Point X="4.5" Y="7.059" />
-        <Point X="6.75" Y="7.059" />
-        <Point X="6.75" Y="8" />
-      </Path>
-    </InheritanceLine>
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAEAAAABAAAAAAAAAAA=</HashCode>
       <FileName>Devices\Lamp.cs</FileName>
@@ -86,14 +62,6 @@
   </Class>
   <Class Name="SmartHome.Microwave">
     <Position X="9" Y="8.75" Width="1.5" />
-    <InheritanceLine Type="SmartHome.Device" ManuallyRouted="true">
-      <Path>
-        <Point X="4.5" Y="6.141" />
-        <Point X="4.5" Y="7.047" />
-        <Point X="9.75" Y="7.047" />
-        <Point X="9.75" Y="8.75" />
-      </Path>
-    </InheritanceLine>
     <TypeIdentifier>
       <HashCode>KBQAAAAAACAAIBBAAAAAwAAAIAAAAAAAYAICgCCCBAA=</HashCode>
       <FileName>Devices\Microwave.cs</FileName>
@@ -102,14 +70,6 @@
   </Class>
   <Class Name="SmartHome.FridgeModule">
     <Position X="3.75" Y="8.5" Width="1.5" />
-    <InheritanceLine Type="SmartHome.Device" ManuallyRouted="true">
-      <Path>
-        <Point X="4.5" Y="6.141" />
-        <Point X="4.5" Y="7.723" />
-        <Point X="4.5" Y="7.723" />
-        <Point X="4.5" Y="8.5" />
-      </Path>
-    </InheritanceLine>
     <TypeIdentifier>
       <HashCode>IAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAYAACCGAAA=</HashCode>
       <FileName>Devices\FridgeModule.cs</FileName>
@@ -118,14 +78,6 @@
   </Class>
   <Class Name="SmartHome.Oven">
     <Position X="14" Y="8.75" Width="1.5" />
-    <InheritanceLine Type="SmartHome.Device" ManuallyRouted="true">
-      <Path>
-        <Point X="4.5" Y="6.141" />
-        <Point X="4.5" Y="7.031" />
-        <Point X="14.75" Y="7.031" />
-        <Point X="14.75" Y="8.75" />
-      </Path>
-    </InheritanceLine>
     <TypeIdentifier>
       <HashCode>KBQAAAAAACAAIBBAAAAAwAAAIAAAAAAAYAYAACCGBAA=</HashCode>
       <FileName>Devices\Oven.cs</FileName>
@@ -156,8 +108,15 @@
   <Class Name="SmartHome.OvenFactory">
     <Position X="13.5" Y="3.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAEAAAA=</HashCode>
       <FileName>Program\OvenFactory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SmartHome.ConsoleMenu">
+    <Position X="16.75" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>hQAQAAAAACAYKAcgQABAAYBAQAhAgEghAIQCAQCARAg=</HashCode>
+      <FileName>Program\ConsoleMenu.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Interface Name="SmartHome.IClock">

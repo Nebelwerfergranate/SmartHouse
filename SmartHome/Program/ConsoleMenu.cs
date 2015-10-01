@@ -76,14 +76,14 @@ namespace SmartHome
 
         }
 
-        public static void AddDevices(Dictionary<string, Device> devices)
+        public static void GetDefaultDevices(Dictionary<string, Device> devices)
         {
-            devices.Add("kitchen_clock", new Clock("kitchen_clock"));
-            devices.Add("bedroom_clock", new Clock("bedroom_clock", DateTime.Now));
-            devices.Add("myMicrowave", MicrowaveFactory.GetWhirpool("myMicrowave"));
-            ((IClock)devices["myMicrowave"]).CurrentTime = new DateTime(1, 1, 1, 12, 0, 0);
-            devices.Add("myOven", OvenFactory.GetSiemense("myOven"));
-            devices.Add("myFridge", FridgeFactory.GetIndesit("myFridge"));
+            devices.Add("clock1", new Clock("clock1"));
+            devices.Add("clock2", new Clock("clock2", DateTime.Now));
+            devices.Add("micr", MicrowaveFactory.GetWhirpool("micr"));
+            ((IClock)devices["micr"]).CurrentTime = new DateTime(1, 1, 1, 12, 0, 0);
+            devices.Add("oven", OvenFactory.GetSiemense("oven"));
+            devices.Add("fr", FridgeFactory.GetIndesit("fr"));
         }
 
         private static void Help()
@@ -118,8 +118,8 @@ namespace SmartHome
             Console.WriteLine("\t\t(openR)efrigeratory");
             Console.WriteLine("\t\t(closeR)efrigeratory");
             Console.WriteLine("\t\t(temp)erature");
-            Console.WriteLine("\t\t(c)oldstore(temp)erature");
-            Console.WriteLine("\t\t(r)erfrigeratory(temp)erature");
+            Console.WriteLine("\t\t(temp)erature(c)oldstore");
+            Console.WriteLine("\t\t(temp)erature(r)erfrigeratory");
             Console.WriteLine("\t\tclock Формат часы:минуты:секунды");
             Console.WriteLine("\t\ttimer Формат часы:минуты:секунды");
             Console.WriteLine("\t\tstart");
@@ -242,7 +242,7 @@ namespace SmartHome
                         SetTemperature(device, commands[2]);
                     }
                 }
-                else if (commands[1].ToLower() == "coldstoretemperature" || commands[1].ToLower() == "ctemp")
+                else if (commands[1].ToLower() == "temperaturecoldstore" || commands[1].ToLower() == "tempc")
                 {
                     if (commands.Count < 3)
                     {
@@ -253,7 +253,7 @@ namespace SmartHome
                         SetColdstoreTemperature(device, commands[2]);
                     }
                 }
-                else if (commands[1].ToLower() == "refrigeratorytemperature" || commands[1].ToLower() == "rtemp")
+                else if (commands[1].ToLower() == "temperaturerefrigeratory" || commands[1].ToLower() == "tempr")
                 {
                     if (commands.Count < 3)
                     {
