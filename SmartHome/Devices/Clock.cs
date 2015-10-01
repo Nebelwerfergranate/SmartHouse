@@ -29,7 +29,7 @@ namespace SmartHome
             }
             set
             {
-                delta = new TimeSpan(value.Hour, value.Minute, CurrentTime.Second) - DateTime.Now.TimeOfDay;
+                delta = new TimeSpan(value.Hour, value.Minute, value.Second) - DateTime.Now.TimeOfDay;
             }
         }
     }

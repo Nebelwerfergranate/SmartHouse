@@ -8,7 +8,8 @@
 
 
         // Constructors
-        public Lamp(double power) : base("лампочка")
+        public Lamp(double power)
+            : base("lamp")
         {
             if (power > 1)
             {

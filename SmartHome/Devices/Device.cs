@@ -9,7 +9,7 @@
         // Constructors
         protected Device(string name)
         {
-            Name = name;
+            Name = name.Replace(' ','_');
         }
 
 

@@ -5,7 +5,7 @@ namespace SmartHome
     public class Microwave : Device, IClock, ITimer, IOpenable, IBacklight, IVolume
     {
         // Fields
-        private readonly Clock clock = new Clock("Встроенные часы");
+        private readonly Clock clock = new Clock("built-in_clock");
 
         private readonly Lamp backlight;
 

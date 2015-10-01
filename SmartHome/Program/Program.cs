@@ -13,7 +13,9 @@ namespace SmartHome
         {
             Dictionary<string, Device> devices = new Dictionary<string, Device>();
             //ConsoleMenu.ClockTest(devices);
-            ConsoleMenu.TimerTest(devices);
+            //ConsoleMenu.TimerTest(devices);
+            ConsoleMenu.AddDevices(devices);
+            ConsoleMenu.Start(devices);
             
             Console.ReadKey();
         }

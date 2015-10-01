@@ -8,7 +8,7 @@
 
         // Constructors
         public Coldstore(uint volume, Lamp lamp)
-            : base("Холодильная камера", volume)
+            : base("coldstore", volume)
         {
             backlight = lamp;
             Temperature = 0;

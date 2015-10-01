@@ -6,6 +6,11 @@ namespace SmartHome
 {
     public static class ConsoleMenu
     {
+        public static void Start(Dictionary<string, Device> devices)
+        {
+            PrintDevicesInfo(devices);
+        }
+
         public static void ClockTest(Dictionary<string, Device> devices)
         {
             //List<Clock> clocks = new List<Clock>();
@@ -78,6 +83,25 @@ namespace SmartHome
             ((IOpenable)devices["духовка 1"]).Open();
             ((ITimer)devices["духовка 1"]).Start();
             Console.WriteLine(Informer.StateToString(devices["духовка 1"]));
+        }
+
+        public static void AddDevices(Dictionary<string, Device> devices)
+        {
+            devices.Add("kitchen clock", new Clock("kitchen clock"));
+            devices.Add("bedroom clock", new Clock("bedroom clock", DateTime.Now));
+            devices.Add("myMycrowave", MicrowaveFactory.GetWhirpool("myMycrowave"));
+            ((IClock)devices["myMycrowave"]).CurrentTime = new DateTime(1, 1, 1, 12, 0, 0);
+            devices.Add("myOven", OvenFactory.GetSiemense("myOven"));
+            devices.Add("myFridge", FridgeFactory.GetIndesit("myFridge"));
+        }
+
+        private static void PrintDevicesInfo(Dictionary<string, Device> devices)
+        {
+            foreach (KeyValuePair<string, Device> device in devices)
+            {
+                Console.WriteLine(Informer.StateToString(device.Value));
+            }
+            Console.WriteLine();
         }
     }
 }
