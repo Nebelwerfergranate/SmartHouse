@@ -172,6 +172,10 @@ namespace SmartHome
                     ErrorMessage(String.Join(" ", commands));
                 }
             }
+            else
+            {
+                InformUser("Необходимо указать тип, производителя и имя устройства.");
+            }
         }
 
         private static void RemoveDevice(List<string> commands)
@@ -186,6 +190,10 @@ namespace SmartHome
                 {
                     devices.Remove(commands[0]);
                 }
+            }
+            else
+            {
+                InformUser("Имя устройства указано");
             }
         }
 
