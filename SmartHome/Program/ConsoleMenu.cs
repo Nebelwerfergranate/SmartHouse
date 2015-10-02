@@ -92,23 +92,23 @@ namespace SmartHome
             Console.WriteLine("В скобках указана сокращенная версия команд");
 
             Console.WriteLine("\tadd");
-            Console.WriteLine("\t\tClock");
+            Console.WriteLine("\t\tClock name");
             Console.WriteLine("\t\tFridge");
-            Console.WriteLine("\t\t\tSamsung");
-            Console.WriteLine("\t\t\tIndesit");
-            Console.WriteLine("\t\t\tAtlant");
+            Console.WriteLine("\t\t\tSamsung name");
+            Console.WriteLine("\t\t\tIndesit name");
+            Console.WriteLine("\t\t\tAtlant name");
             Console.WriteLine("\t\tMicrowave");
-            Console.WriteLine("\t\t\tWhirpool");
-            Console.WriteLine("\t\t\tPanasonic");
-            Console.WriteLine("\t\t\tLG");
+            Console.WriteLine("\t\t\tWhirpool name");
+            Console.WriteLine("\t\t\tPanasonic name");
+            Console.WriteLine("\t\t\tLG name");
             Console.WriteLine("\t\tOven");
-            Console.WriteLine("\t\t\tSiemense");
-            Console.WriteLine("\t\t\tElectrolux");
-            Console.WriteLine("\t\t\tPyramida");
+            Console.WriteLine("\t\t\tSiemense name");
+            Console.WriteLine("\t\t\tElectrolux name");
+            Console.WriteLine("\t\t\tPyramida name");
 
-            Console.WriteLine("\t(rem)ove");
+            Console.WriteLine("\t(rem)ove name");
 
-            Console.WriteLine("\t(u)se");
+            Console.WriteLine("\t(u)se name");
             Console.WriteLine("\t\ton");
             Console.WriteLine("\t\toff");
             Console.WriteLine("\t\topen");
