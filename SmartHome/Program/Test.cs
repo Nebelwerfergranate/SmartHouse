@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Threading;
 
-namespace SmartHome
+namespace SmartHome.Program
 {
     class Test
     {

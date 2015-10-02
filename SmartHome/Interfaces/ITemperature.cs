@@ -1,6 +1,6 @@
 ﻿namespace SmartHome
 {
-    public interface ITemperaturable
+    public interface ITemperature
     {
         double Temperature { get; set; }
     }

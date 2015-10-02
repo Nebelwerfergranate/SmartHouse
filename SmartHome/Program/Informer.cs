@@ -78,9 +78,9 @@ namespace SmartHome
         private static string GetTemperatureInfo(Device device)
         {
             string info = "";
-            if (device is ITemperaturable)
+            if (device is ITemperature)
             {
-                info += "Установка термостата: " + ((ITemperaturable)device).Temperature + " градусов\n";
+                info += "Установка термостата: " + ((ITemperature)device).Temperature + " градусов\n";
             }
             return info;
         }

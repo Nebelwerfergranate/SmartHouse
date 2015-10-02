@@ -1,6 +1,6 @@
 ﻿namespace SmartHome
 {
-    public abstract class FridgeModule : Device, IOpenable, ITemperaturable, IVolume
+    public abstract class FridgeModule : Device, IOpenable, ITemperature, IVolume
     {
         // Fields
         protected readonly double volume;

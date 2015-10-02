@@ -616,14 +616,14 @@ namespace SmartHome
 
         private static void SetTemperature(Device device, string userInput)
         {
-            if (device is ITemperaturable)
+            if (device is ITemperature)
             {
                 double temperature = 0;
                 if (!ParseTemperature(userInput, out temperature))
                 {
                     InformUser("Температура указанна в неправильном формате!");
                 }
-                ((ITemperaturable)device).Temperature = temperature;
+                ((ITemperature)device).Temperature = temperature;
             }
             else
             {

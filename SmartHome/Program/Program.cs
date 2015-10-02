@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace SmartHome
+namespace SmartHome.Program
 {
     class Program
     {

@@ -18,7 +18,8 @@ namespace SmartHome
 
 
         // Constructors
-        public Microwave(string name, double volume, Lamp lamp) : base(name)
+        public Microwave(string name, double volume, Lamp lamp)
+            : base(name)
         {
             this.backlight = lamp;
             if (volume < 10)
@@ -100,12 +101,16 @@ namespace SmartHome
         {
             if (this.isOn)
             {
-                timer.Interval = time.Seconds * 1000 + time.Minutes * 60 * 1000;
+                int miliSeconds = time.Seconds * 1000 + time.Minutes * 60 * 1000;
+                if (miliSeconds > 0)
+                {
+                    timer.Interval = miliSeconds;
+                }
             }
         }
         public void Start()
         {
-            if (this.isOn && !IsOpen && timer.Interval > 0)
+            if (this.isOn && !IsOpen && timer.Interval > 999)
             {
                 timer.Start();
                 isRunning = true;

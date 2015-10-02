@@ -133,11 +133,11 @@
       <FileName>Interfaces\IBacklight.cs</FileName>
     </TypeIdentifier>
   </Interface>
-  <Interface Name="SmartHome.ITemperaturable">
+  <Interface Name="SmartHome.ITemperature">
     <Position X="4.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAA=</HashCode>
-      <FileName>Interfaces\ITemperaturable.cs</FileName>
+      <FileName>Interfaces\ITemperature.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="SmartHome.ITimer">

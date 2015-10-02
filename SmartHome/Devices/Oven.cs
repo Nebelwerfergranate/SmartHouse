@@ -2,7 +2,7 @@
 
 namespace SmartHome
 {
-    public class Oven : Device, ITemperaturable, IOpenable, IBacklight, ITimer, IVolume
+    public class Oven : Device, ITemperature, IOpenable, IBacklight, ITimer, IVolume
     {
         // Fields
         private readonly Lamp backlight;
@@ -124,13 +124,17 @@ namespace SmartHome
         {
             if (this.isOn)
             {
-                timer.Interval = time.Seconds * 1000 + time.Minutes * 60 * 1000;
+                int miliSeconds = time.Seconds * 1000 + time.Minutes * 60 * 1000 + time.Hours * 60 * 60 * 1000;
+                if (miliSeconds > 0)
+                {
+                    timer.Interval = miliSeconds;
+                }
             }
         }
         public void Start()
         {
             // В отличие от микроволновки духовку можно открывать.
-            if (this.isOn && timer.Interval> 0)
+            if (this.isOn && timer.Interval > 999)
             {
                 timer.Start();
                 isRunning = true;
